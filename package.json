@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-websocket",
+  "version": "1.0.0",
+  "description": "template",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msArray/Nodejs-Websocket.git"
+  },
+  "keywords": [
+    "Websocket"
+  ],
+  "author": "msArray",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msArray/Nodejs-Websocket/issues"
+  },
+  "homepage": "https://github.com/msArray/Nodejs-Websocket#readme",
+  "devDependencies": {
+    "ws": "^8.14.2"
+  }
+}
