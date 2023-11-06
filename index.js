@@ -1,10 +1,16 @@
 const ws = require("ws");
+const Logger = require("./logger")
 const server = new ws.Server({ port: 3000 })
+
+new Logger().setup();
 
 const clients = {};
 
-server.on('connection', (socket) => {
+server.on('connection', (socket, req) => {
+
     const clientId = generateClientId();
+
+    new Logger().success(`Connect cliend ID:${clientId}`, req.socket.remoteAddress);
 
     clients[clientId] = socket;
 
@@ -16,11 +22,9 @@ server.on('connection', (socket) => {
 
     socket.on('message', (data) => {
         const DataObject = JSON.parse(data)
-        console.log(DataObject);
     })
 
     socket.on('close', (data, reason) => {
-        console.log(data, reason);
         delete clients[clientId];
     })
 })
