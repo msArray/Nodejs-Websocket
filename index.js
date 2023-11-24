@@ -27,7 +27,7 @@ server.on('connection', (socket, req) => {
     })
 
     socket.on('close', (data, reason) => {
-        delete clients[clientId];
+        delete clients[this.clientId];
     })
 })
 
