@@ -23,7 +23,7 @@ server.on('connection', (socket, req) => {
 
     socket.on('message', (data) => {
         console.log(new Reader(data).decode());
-        this.data = JSON.parse(new Reader(data).decode());
+        //this.data = JSON.parse(new Reader(data).decode());
     })
 
     socket.on('close', (data, reason) => {
